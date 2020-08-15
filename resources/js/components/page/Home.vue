@@ -5,18 +5,19 @@
         <article class="col-md-8 col-xs-12">
           <section class="home-quiz__introduction">
             <h2 class="home-quiz__introduction-h2">
-              <img class="home-quiz__introduction-h2-logo" src="" />4 Answers Quizとは?
+              <img class="home-quiz__introduction-h2-logo" src />4 Answers Quizとは?
             </h2>
             <p>4 Answers Quizとはビジネスマナーから一般常識に至るまで様々なクイズを4択で出題するWEBアプリです。</p>
             <p>何度もトライしてみて正解率100%を目指してみてください。</p>
           </section>
           <section class="home-quiz__setting">
             <h2 class="home-quiz__setting-h2">
-              <img class="home-quiz__setting-h2-logo" src="" />出題設定
+              <img class="home-quiz__setting-h2-logo" src />出題設定
             </h2>
             <form>
-             <label v-for="(cate, index) in category" :key="index">
-                <input type="checkbox" v-model="categories" :value="cate.id" />{{cate.name}}&ensp;
+              <label v-for="(cate, index) in category" :key="index">
+                <input type="checkbox" v-model="categories" :value="cate.id" />
+                {{cate.name}}&ensp;
               </label>
               <div class>
                 全項目チェック
@@ -28,28 +29,49 @@
           </section>
           <section class="home-quiz__ranking">
             <h2 class="home-quiz__ranking-h2">
-              <img class="home-quiz__ranking-h2-logo" src="" />ランキング
+              <img class="home-quiz__ranking-h2-logo" src />ランキング
             </h2>
             <div>
               <label>
-                <input class="ranking-radio" type="radio" name="ranking-radio" value="1" checked />総合
+                <input
+                  class="ranking-radio"
+                  type="radio"
+                  name="ranking-radio"
+                  v-model="rankingType"
+                  value="1"
+                  checked
+                />総合
               </label>
               <label>
-                <input class="ranking-radio" type="radio" name="ranking-radio" value="2" />今月
+                <input
+                  class="ranking-radio"
+                  type="radio"
+                  name="ranking-radio"
+                  v-model="rankingType"
+                  value="2"
+                />今月
               </label>
               <label>
-                <input class="ranking-radio" type="radio" name="ranking-radio" value="3" />今週
+                <input
+                  class="ranking-radio"
+                  type="radio"
+                  name="ranking-radio"
+                  v-model="rankingType"
+                  value="3"
+                />今週
               </label>
             </div>
             <div class="home_quiz__ranking-chart">
-              <bar-chart></bar-chart>
+              <bar-chart :chartData="total" ref="totalChart" v-show="rankingType === '1'"></bar-chart>
+              <bar-chart :chartData="month" ref="monthChart" v-show="rankingType === '2'"></bar-chart>
+              <bar-chart :chartData="week" ref="weekChart" v-show="rankingType === '3'"></bar-chart>
             </div>
           </section>
           <section class="home__notice">
             <h2 class="home__notice-h2">
-              <img class="home__notice-h2-logo" src="" />お知らせ情報
+              <img class="home__notice-h2-logo" src />お知らせ情報
             </h2>
-             <dl v-for="(info, index) in information" :key="index">
+            <dl v-for="(info, index) in information" :key="index">
               <dt>{{info.created_at}}</dt>
               <dd>{{info.information}}</dd>
             </dl>
@@ -68,28 +90,75 @@ import BarChart from "../module/BarChart";
 export default {
   components: {
     TheSidebar,
-    BarChart
+    BarChart,
   },
   data() {
     return {
       categories: [1],
-      information:[],
+      information: [],
       category: [],
+      rankingAlldata: {},
+      week: {},
+      month: {},
+      total: {},
+      rankingType: "1"
     };
   },
   mounted() {
-     this.$http.get("/api/category").then(response => {
+    this.$http.get("/api/category").then((response) => {
       this.category = response.data;
     });
 
-    this.$http.get("/api/information").then(response => {
+    this.$http.get("/api/information").then((response) => {
       this.information = response.data;
+    });
+
+    this.$http.get("/api/ranking").then(response => {
+      this.rankingAlldata = response.data;
+      this.setRanking();
     });
   },
   methods: {
     goQuiz() {
       this.$router.push("/quiz?categories=" + this.categories);
-    }
-  }
+    },
+    setRanking() {
+      this.week = Object.assign({}, this.week, {
+        labels: this.rankingAlldata.weekRankingData.name,
+        datasets: [
+          {
+            label: ["最高得点率"],
+            backgroundColor: "rgba(0, 170, 248, 0.47)",
+            data: this.rankingAlldata.weekRankingData.percentage_correct_answer
+          }
+        ]
+      });
+      this.month = Object.assign({}, this.month, {
+        labels: this.rankingAlldata.monthRankingData.name,
+        datasets: [
+          {
+            label: ["最高得点率"],
+            backgroundColor: "rgba(0, 170, 248, 0.47)",
+            data: this.rankingAlldata.monthRankingData.percentage_correct_answer
+          }
+        ]
+      });
+      this.total = Object.assign({}, this.total, {
+        labels: this.rankingAlldata.totalRankingData.name,
+        datasets: [
+          {
+            label: ["最高得点率"],
+            backgroundColor: "rgba(0, 170, 248, 0.47)",
+            data: this.rankingAlldata.totalRankingData.percentage_correct_answer
+          }
+        ]
+      });
+      this.$nextTick(() => {
+        this.$refs.totalChart.renderBarChart();
+        this.$refs.monthChart.renderBarChart();
+        this.$refs.weekChart.renderBarChart();
+      });
+    },
+  },
 };
 </script>
