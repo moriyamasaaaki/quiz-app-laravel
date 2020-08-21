@@ -66,7 +66,7 @@
               data-toggle="modal"
               data-target="#modal-result"
               class="center-block"
-              v-if="isQuizFinish"
+              v-show="isQuizFinish"
               @click="showResult"
             >結果を見る</button>
           </section>
@@ -74,7 +74,7 @@
         <the-sidebar></the-sidebar>
       </div>
     </main>
-    <the-modal :correctPercentageObject="correctPercentageObject" ref="modal" ></the-modal>
+    <the-modal :correctPercentageObject="correctPercentageObject" ref="modal"></the-modal>
   </div>
 </template>
 
@@ -102,31 +102,30 @@ export default {
       score: 0,
       quizNumber: 1,
       categoryName: "",
-      correctPercentageObject: {}
+      correctPercentageObject: {},
     };
   },
-  mounted() {
+mounted() {
     const categories = this.$route.query.categories;
-    this.$http.get(`/api/quiz?categories=${categories}`).then(response => {
-      this.quizData = response.data;
-      this.findNextQuiz(0);
-      console.log(this.quizData);
-    });
-  },
-  methods: {
-    findNextQuiz(quizNumber) {
-      this.title = this.quizData[quizNumber].title;
-      this.answers = [
-        this.quizData[quizNumber].answer.answer_1,
-        this.quizData[quizNumber].answer.answer_2,
-        this.quizData[quizNumber].answer.answer_3,
-        this.quizData[quizNumber].answer.answer_4
-      ];
-      this.commentary = this.quizData[quizNumber].answer.commentary;
-      this.correctAnswerNo = this.quizData[quizNumber].answer.correct_answer_no;
-      this.categoryName = this.quizData[quizNumber].category.name;
-    },
+    const loader = this.$loading.show();
+    this.$http
+      .get(`/api/quiz?categories=${categories}`)
+      .then(response => {
+        this.quizData = response.data;
 
+        if (this.quizData.length < 10) {
+          alert("クイズ10問以下のため、初期画面に戻ります。カテゴリーを選択し直してください");
+          location.href = "/";
+        } else {
+          this.findNextQuiz(0);
+          loader.hide();
+        }
+      })
+      .catch(error => {
+        alert("クイズの読み込みに失敗したため、初期画面に戻ります");
+        location.href = "/";
+      });
+  },  methods: {
     goAnswer(selectAnswerNum) {
       if (selectAnswerNum === 0) {
         this.isCorrect = false;
@@ -140,12 +139,12 @@ export default {
         this.isCorrect = false;
       }
       this.isAlreadyAnswered = true;
-
       if (this.quizNumber >= 10) {
         this.endQuiz();
       }
     },
     findNextQuiz(quizNumber) {
+      window.scroll(0, 0);
       this.title = this.quizData[quizNumber].title;
       this.answers = [
         this.quizData[quizNumber].answer.answer_1,
@@ -157,7 +156,6 @@ export default {
       this.correctAnswerNo = this.quizData[quizNumber].answer.correct_answer_no;
       this.categoryName = this.quizData[quizNumber].category.name;
     },
-
     goNextQuiz() {
       if (this.quizNumber >= 10) {
         this.endQuiz();
@@ -184,3 +182,4 @@ export default {
   }
 };
 </script>
+

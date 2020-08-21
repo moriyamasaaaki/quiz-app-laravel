@@ -204,10 +204,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layout_TheSidebar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../layout/TheSidebar */ "./resources/js/components/layout/TheSidebar.vue");
 /* harmony import */ var _module_TheModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../module/TheModal */ "./resources/js/components/module/TheModal.vue");
-var _methods;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //
 //
 //
@@ -317,22 +313,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     var _this = this;
 
     var categories = this.$route.query.categories;
+    var loader = this.$loading.show();
     this.$http.get("/api/quiz?categories=".concat(categories)).then(function (response) {
       _this.quizData = response.data;
 
-      _this.findNextQuiz(0);
+      if (_this.quizData.length < 10) {
+        alert("クイズ10問以下のため、初期画面に戻ります。カテゴリーを選択し直してください");
+        location.href = "/";
+      } else {
+        _this.findNextQuiz(0);
 
-      console.log(_this.quizData);
+        loader.hide();
+      }
+    })["catch"](function (error) {
+      alert("クイズの読み込みに失敗したため、初期画面に戻ります");
+      location.href = "/";
     });
   },
-  methods: (_methods = {
-    findNextQuiz: function findNextQuiz(quizNumber) {
-      this.title = this.quizData[quizNumber].title;
-      this.answers = [this.quizData[quizNumber].answer.answer_1, this.quizData[quizNumber].answer.answer_2, this.quizData[quizNumber].answer.answer_3, this.quizData[quizNumber].answer.answer_4];
-      this.commentary = this.quizData[quizNumber].answer.commentary;
-      this.correctAnswerNo = this.quizData[quizNumber].answer.correct_answer_no;
-      this.categoryName = this.quizData[quizNumber].category.name;
-    },
+  methods: {
     goAnswer: function goAnswer(selectAnswerNum) {
       if (selectAnswerNum === 0) {
         this.isCorrect = false;
@@ -351,34 +349,39 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       if (this.quizNumber >= 10) {
         this.endQuiz();
       }
+    },
+    findNextQuiz: function findNextQuiz(quizNumber) {
+      window.scroll(0, 0);
+      this.title = this.quizData[quizNumber].title;
+      this.answers = [this.quizData[quizNumber].answer.answer_1, this.quizData[quizNumber].answer.answer_2, this.quizData[quizNumber].answer.answer_3, this.quizData[quizNumber].answer.answer_4];
+      this.commentary = this.quizData[quizNumber].answer.commentary;
+      this.correctAnswerNo = this.quizData[quizNumber].answer.correct_answer_no;
+      this.categoryName = this.quizData[quizNumber].category.name;
+    },
+    goNextQuiz: function goNextQuiz() {
+      if (this.quizNumber >= 10) {
+        this.endQuiz();
+      } else {
+        this.findNextQuiz(this.quizNumber);
+        this.quizNumber += 1;
+        this.isCorrect = false;
+        this.isMistake = false;
+        this.isAlreadyAnswered = false;
+      }
+    },
+    endQuiz: function endQuiz() {
+      this.isQuizFinish = true;
+      this.answerNo = "-";
+      this.isAlreadyAnswered = true;
+      this.correctPercentageObject = {
+        correctScore: this.score,
+        mistakeScore: 10 - this.score
+      };
+    },
+    showResult: function showResult() {
+      this.$refs.modal.render();
     }
-  }, _defineProperty(_methods, "findNextQuiz", function findNextQuiz(quizNumber) {
-    this.title = this.quizData[quizNumber].title;
-    this.answers = [this.quizData[quizNumber].answer.answer_1, this.quizData[quizNumber].answer.answer_2, this.quizData[quizNumber].answer.answer_3, this.quizData[quizNumber].answer.answer_4];
-    this.commentary = this.quizData[quizNumber].answer.commentary;
-    this.correctAnswerNo = this.quizData[quizNumber].answer.correct_answer_no;
-    this.categoryName = this.quizData[quizNumber].category.name;
-  }), _defineProperty(_methods, "goNextQuiz", function goNextQuiz() {
-    if (this.quizNumber >= 10) {
-      this.endQuiz();
-    } else {
-      this.findNextQuiz(this.quizNumber);
-      this.quizNumber += 1;
-      this.isCorrect = false;
-      this.isMistake = false;
-      this.isAlreadyAnswered = false;
-    }
-  }), _defineProperty(_methods, "endQuiz", function endQuiz() {
-    this.isQuizFinish = true;
-    this.answerNo = "-";
-    this.isAlreadyAnswered = true;
-    this.correctPercentageObject = {
-      correctScore: this.score,
-      mistakeScore: 10 - this.score
-    };
-  }), _defineProperty(_methods, "showResult", function showResult() {
-    this.$refs.modal.render();
-  }), _methods)
+  }
 });
 
 /***/ }),
@@ -39265,21 +39268,27 @@ var render = function() {
                     )
                   : _vm._e(),
                 _vm._v(" "),
-                _vm.isQuizFinish
-                  ? _c(
-                      "button",
+                _c(
+                  "button",
+                  {
+                    directives: [
                       {
-                        staticClass: "center-block",
-                        attrs: {
-                          type: "button",
-                          "data-toggle": "modal",
-                          "data-target": "#modal-result"
-                        },
-                        on: { click: _vm.showResult }
-                      },
-                      [_vm._v("結果を見る")]
-                    )
-                  : _vm._e()
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.isQuizFinish,
+                        expression: "isQuizFinish"
+                      }
+                    ],
+                    staticClass: "center-block",
+                    attrs: {
+                      type: "button",
+                      "data-toggle": "modal",
+                      "data-target": "#modal-result"
+                    },
+                    on: { click: _vm.showResult }
+                  },
+                  [_vm._v("結果を見る")]
+                )
               ])
             ]),
             _vm._v(" "),
