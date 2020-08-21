@@ -79,6 +79,7 @@
         </article>
         <the-sidebar></the-sidebar>
       </div>
+       <notifications />
     </main>
   </div>
 </template>
@@ -117,6 +118,15 @@ export default {
       this.rankingAlldata = response.data;
       this.setRanking();
     });
+
+     const referrer = document.referrer;
+    if (referrer.indexOf("/login") !== -1) {
+      this.displayNotification("ログインしました", "info");
+      this.resetReferrer();
+    } else if (referrer.indexOf("/register") !== -1) {
+      this.displayNotification("会員登録しました", "success");
+      this.resetReferrer();
+    }
   },
   methods: {
     goQuiz() {
@@ -159,6 +169,18 @@ export default {
         this.$refs.weekChart.renderBarChart();
       });
     },
+     resetReferrer() {
+      Object.defineProperty(document, "referrer", {
+        value: location.href
+      });
+    },
+    displayNotification(text, type) {
+      this.$notify({
+        title: "お知らせ",
+        text: text,
+        type: type
+      });
+    }
   },
 };
 </script>
