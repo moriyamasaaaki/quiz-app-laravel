@@ -7,4 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $table = 'categories';
+
+    /**
+     *
+     * @return array
+     */
+    public function findCategorySelectBoxInAdmin(): array
+    {
+        $categories = Category::select('id', 'name')->get();
+
+        $categoryArray = [];
+
+        foreach ($categories as $category) {
+            $categoryArray[$category->id] = $category->name;
+        }
+        return $categoryArray;
+    }
 }
