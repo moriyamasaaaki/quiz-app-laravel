@@ -86,6 +86,164 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/layout/TheSidebar.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/layout/TheSidebar.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      information: []
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$http.get("/api/information").then(function (response) {
+      _this.information = response.data;
+    });
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/module/PieChart.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/module/PieChart.vue?vue&type=script&lang=js& ***!
@@ -38506,109 +38664,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("aside", { staticClass: "col-md-4 col-xs-12" }, [
-    _c("section", { staticClass: "sidebar-sns-section" }, [
-      _c("h3", { staticClass: "text-center sidebar-sns-h3" }, [
-        _vm._v("SNS共有")
+  return _c("aside", { staticClass: "sidebar col-md-4 col-xs-12" }, [
+    _c("section", { staticClass: "sidebar__notice" }, [
+      _c("h3", { staticClass: "sidebar__notice-h3 text-center" }, [
+        _vm._v("更新情報")
       ]),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "sidebar-sns-links" },
-        [
-          _c("social-sharing", {
-            attrs: { title: "shareボタン" },
-            inlineTemplate: {
-              render: function() {
-                var _vm = this
-                var _h = _vm.$createElement
-                var _c = _vm._self._c || _h
-                return _c(
-                  "div",
-                  { staticClass: "twitter__share" },
-                  [
-                    _c("network", { attrs: { network: "twitter" } }, [
-                      _c("i", { staticClass: "fab fa-twitter" }),
-                      _vm._v(" Twitter\n          ")
-                    ])
-                  ],
-                  1
-                )
-              },
-              staticRenderFns: []
-            }
-          }),
-          _vm._v(" "),
-          _c("social-sharing", {
-            attrs: { title: "shareボタン" },
-            inlineTemplate: {
-              render: function() {
-                var _vm = this
-                var _h = _vm.$createElement
-                var _c = _vm._self._c || _h
-                return _c(
-                  "div",
-                  { staticClass: "facebook__share" },
-                  [
-                    _c("network", { attrs: { network: "facebook" } }, [
-                      _c("i", { staticClass: "fab fa-facebook" }),
-                      _vm._v(" Facebook\n          ")
-                    ])
-                  ],
-                  1
-                )
-              },
-              staticRenderFns: []
-            }
-          }),
-          _vm._v(" "),
-          _c("social-sharing", {
-            attrs: { title: "shareボタン" },
-            inlineTemplate: {
-              render: function() {
-                var _vm = this
-                var _h = _vm.$createElement
-                var _c = _vm._self._c || _h
-                return _c(
-                  "div",
-                  { staticClass: "line__share" },
-                  [
-                    _c("network", { attrs: { network: "line" } }, [
-                      _c("i", { staticClass: "fab fa-line" }),
-                      _vm._v(" Line\n          ")
-                    ])
-                  ],
-                  1
-                )
-              },
-              staticRenderFns: []
-            }
-          }),
-          _vm._v(" "),
-          _c("social-sharing", {
-            attrs: { title: "shareボタン" },
-            inlineTemplate: {
-              render: function() {
-                var _vm = this
-                var _h = _vm.$createElement
-                var _c = _vm._self._c || _h
-                return _c(
-                  "div",
-                  { staticClass: "google__share" },
-                  [
-                    _c("network", { attrs: { network: "googleplus" } }, [
-                      _c("i", { staticClass: "fab fa-google" }),
-                      _vm._v(" google\n          ")
-                    ])
-                  ],
-                  1
-                )
-              },
-              staticRenderFns: []
-            }
-          })
-        ],
-        1
+        { staticClass: "sidebar__notice-table" },
+        _vm._l(_vm.information, function(info, index) {
+          return _c("dl", { key: index }, [
+            _c("dt", [_vm._v(_vm._s(info.created_at))]),
+            _vm._v(" "),
+            _c("dd", [_vm._v(_vm._s(info.information))])
+          ])
+        }),
+        0
       )
     ]),
     _vm._v(" "),
@@ -38950,6 +39022,88 @@ var render = function() {
           1
         )
       ])
+    ]),
+    _vm._v(" "),
+    _c("section", { staticClass: "sidebar-sns-section" }, [
+      _c("h3", { staticClass: "text-center sidebar-sns-h3" }, [
+        _vm._v("SNSシェア")
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "sidebar-sns-links" },
+        [
+          _c("social-sharing", {
+            attrs: { title: "shareボタン" },
+            inlineTemplate: {
+              render: function() {
+                var _vm = this
+                var _h = _vm.$createElement
+                var _c = _vm._self._c || _h
+                return _c(
+                  "div",
+                  { staticClass: "twitter__share" },
+                  [
+                    _c("network", { attrs: { network: "twitter" } }, [
+                      _c("i", { staticClass: "fab fa-twitter" }),
+                      _vm._v(" Twitter\n          ")
+                    ])
+                  ],
+                  1
+                )
+              },
+              staticRenderFns: []
+            }
+          }),
+          _vm._v(" "),
+          _c("social-sharing", {
+            attrs: { title: "shareボタン" },
+            inlineTemplate: {
+              render: function() {
+                var _vm = this
+                var _h = _vm.$createElement
+                var _c = _vm._self._c || _h
+                return _c(
+                  "div",
+                  { staticClass: "facebook__share" },
+                  [
+                    _c("network", { attrs: { network: "facebook" } }, [
+                      _c("i", { staticClass: "fab fa-facebook" }),
+                      _vm._v(" Facebook\n          ")
+                    ])
+                  ],
+                  1
+                )
+              },
+              staticRenderFns: []
+            }
+          }),
+          _vm._v(" "),
+          _c("social-sharing", {
+            attrs: { title: "shareボタン" },
+            inlineTemplate: {
+              render: function() {
+                var _vm = this
+                var _h = _vm.$createElement
+                var _c = _vm._self._c || _h
+                return _c(
+                  "div",
+                  { staticClass: "line__share" },
+                  [
+                    _c("network", { attrs: { network: "line" } }, [
+                      _c("i", { staticClass: "fab fa-line" }),
+                      _vm._v(" Line\n          ")
+                    ])
+                  ],
+                  1
+                )
+              },
+              staticRenderFns: []
+            }
+          })
+        ],
+        1
+      )
     ])
   ])
 }
@@ -51923,15 +52077,17 @@ module.exports = function(module) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TheSidebar_vue_vue_type_template_id_356089d6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TheSidebar.vue?vue&type=template&id=356089d6& */ "./resources/js/components/layout/TheSidebar.vue?vue&type=template&id=356089d6&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _TheSidebar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TheSidebar.vue?vue&type=script&lang=js& */ "./resources/js/components/layout/TheSidebar.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _TheSidebar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _TheSidebar_vue_vue_type_template_id_356089d6___WEBPACK_IMPORTED_MODULE_0__["render"],
   _TheSidebar_vue_vue_type_template_id_356089d6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -51945,6 +52101,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/layout/TheSidebar.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/layout/TheSidebar.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/layout/TheSidebar.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheSidebar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./TheSidebar.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/layout/TheSidebar.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheSidebar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 

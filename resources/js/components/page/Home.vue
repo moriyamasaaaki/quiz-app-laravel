@@ -5,14 +5,14 @@
         <article class="col-md-8 col-xs-12">
           <section class="home-quiz__introduction">
             <h2 class="home-quiz__introduction-h2">
-              <img class="home-quiz__introduction-h2-logo" src />4 Answers Quizとは?
+              <img class="home-quiz__introduction-h2-logo" src />基礎知識クイズ
             </h2>
-            <p>4 Answers Quizとはビジネスマナーから一般常識に至るまで様々なクイズを4択で出題するWEBアプリです。</p>
-            <p>何度もトライしてみて正解率100%を目指してみてください。</p>
+            <p>ジャンルを選んで正答率100%を目指そう</p>
+            <p> ランキング１位を目指そう！！</p>
           </section>
           <section class="home-quiz__setting">
             <h2 class="home-quiz__setting-h2">
-              <img class="home-quiz__setting-h2-logo" src />出題設定
+              <img class="home-quiz__setting-h2-logo" src />カテゴリー
             </h2>
             <form>
               <label v-for="(cate, index) in category" :key="index">
@@ -66,15 +66,6 @@
               <bar-chart :chartData="month" ref="monthChart" v-show="rankingType === '2'"></bar-chart>
               <bar-chart :chartData="week" ref="weekChart" v-show="rankingType === '3'"></bar-chart>
             </div>
-          </section>
-          <section class="home__notice">
-            <h2 class="home__notice-h2">
-              <img class="home__notice-h2-logo" src />お知らせ情報
-            </h2>
-            <dl v-for="(info, index) in information" :key="index">
-              <dt>{{info.created_at}}</dt>
-              <dd>{{info.information}}</dd>
-            </dl>
           </section>
         </article>
         <the-sidebar></the-sidebar>

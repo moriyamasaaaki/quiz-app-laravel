@@ -1,11 +1,5 @@
 <template>
   <header>
-    <div class="container text-center">
-      <h1>4 Answers Quiz 4択クイズ&クイズ徹底解説</h1>
-      <router-link to="/">
-        <img class="header-nav__logo" src alt="タイトル" />
-      </router-link>
-    </div>
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
@@ -20,7 +14,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <router-link class="navbar-brand" id="header-nav__home" to="/">ホーム</router-link>
+          <router-link class="navbar-brand" id="header-nav__home" to="/">基礎知識クイズ</router-link>
         </div>
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
           <ul class="nav navbar-nav navbar-right" v-if="auth.length === 0">
@@ -28,7 +22,7 @@
               <router-link id="header-nav__login" to="/login">ログイン</router-link>
             </li>
             <li>
-              <router-link id="header-nav__register" to="/register">ユーザー登録</router-link>
+              <router-link id="header-nav__register" to="/register">登録</router-link>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right" v-if="auth.length !== 0">

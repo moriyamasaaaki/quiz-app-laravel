@@ -1,48 +1,72 @@
 .sidebar {
-  &-sns-section {
-    background: $white;
-  }
-
-  &-sns-h3 {
-    background: $sidebar-header-blue;
-    margin: 0px auto;
-    padding: 10px;
-  }
-
-  &-sns-links {
-    padding-left: 5px;
-    padding-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-
-  &-keywords {
-    margin-top: 10px;
-    border: solid #C2CBD3;
-    background: #fff;
-
-    &-h3 {
-      background: $sidebar-header-blue;
-      margin: 0px auto;
-      padding: 10px;
+    &-sns-section {
+        background: $white;
     }
 
-    &__links {
-      li {
-        list-style: none;
-        margin-left: -35px;
-        padding-top: 10px;
-
-        @include sp {
-          display: flex;
-          flex-wrap: wrap;
-        }
-
-        a {
-          margin-left: 15px;
-        }
-      }
+    &-sns-h3 {
+        background: $sidebar-header-blue;
+        padding: 10px;
     }
-  }
+
+    &-sns-links {
+        padding: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &-keywords {
+        margin-top: 10px;
+        border: solid #c2cbd3;
+        background: #fff;
+
+        &-h3 {
+            background: $sidebar-header-blue;
+            margin: 0px auto;
+            padding: 10px;
+        }
+
+        &__links {
+            li {
+                list-style: none;
+                margin-left: -35px;
+                padding-top: 10px;
+
+                @include sp {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+
+                a {
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+    &__notice {
+        margin: 0px auto;
+        @include pc {
+            margin: 10px auto 0;
+        }
+    }
+    &__notice-table {
+        background: #fff;
+        padding: 8px;
+    }
+    &__notice-h3 {
+        background: $sidebar-header-blue;
+        margin: 0px auto;
+        padding: 10px;
+    }
+}
+.col-md-4,
+.col-xs-12 {
+    padding: 0;
+}
+
+@media (min-width: 992px) {
+    .col-md-4,
+    .col-xs-12 {
+        padding: 0 15px;
+    }
 }

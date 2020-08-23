@@ -4,7 +4,9 @@
       padding: 5px 10px;
 
       &-h2 {
-        border-bottom: solid;
+        border-bottom: 3px dotted;
+        padding-bottom: 8px;
+        margin-bottom: 16px;
 
         &-logo {
           width: 10%;
@@ -15,7 +17,9 @@
       padding: 5px 10px;
 
       &-h2 {
-        border-bottom: solid;
+        border-bottom: 3px dotted;
+        padding-bottom: 8px;
+        margin-bottom: 16px;
 
         &-logo {
           width: 10%;
@@ -27,23 +31,13 @@
       padding: 5px 10px;
 
       &-h2 {
-        border-bottom: solid;
+        border-bottom: 3px dotted;
+        padding-bottom: 8px;
+        margin-bottom: 16px;
 
         &-logo {
           width: 10%;
         }
-      }
-    }
-  }
-
-  &__notice {
-    padding: 5px 10px;
-
-    &-h2 {
-      border-bottom: solid;
-
-      &-logo {
-        width: 10%;
       }
     }
   }
