@@ -4579,13 +4579,11 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
 header {
-  margin-top: -10px;
   background: #fff;
 }
 
 header h1 {
-  font-size: 12px;
-  margin: 10px;
+  font-size: 16px;
 }
 
 header .navbar-brand {
@@ -4593,8 +4591,8 @@ header .navbar-brand {
 }
 
 header .navbar {
-  background: #6f7882;
-  border-color: #6f7882;
+  background: #335569;
+  border-color: #335569;
 }
 
 header .header-nav__logo {
@@ -4603,30 +4601,18 @@ header .header-nav__logo {
 }
 
 header .header-nav__drop-down {
-  background: #6f7882;
+  background: #335569;
 }
 
-header #header-nav__home {
-  color: #fff;
-}
-
-header #header-nav__login {
-  color: #fff;
-}
-
-header #header-nav__register {
-  color: #fff;
-}
-
-header #header-nav__name {
-  color: #fff;
-}
-
+header #header-nav__home,
+header #header-nav__login,
+header #header-nav__register,
+header #header-nav__name,
 header #header-nav__mypage {
   color: #fff;
-  margin: auto;
 }
 
+header #header-nav__mypage,
 header #header-nav__logout {
   color: #fff;
   margin: auto;
@@ -4659,7 +4645,6 @@ main {
 }
 
 article {
-  border: solid #C2CBD3;
   background: #fff;
   width: 60%;
 }
@@ -4674,48 +4659,35 @@ article {
   }
 }
 
+.fa-facebook,
+.fa-line,
 .fa-twitter {
-  color: #00aced;
+  color: white;
+}
+
+.twitter__share,
+.facebook__share,
+.line__share {
+  border-radius: 5px;
+  color: white;
+  padding: 4px 8px;
+  margin: 8px;
+  cursor: pointer;
 }
 
 .twitter__share {
-  border-radius: 5px;
   border: solid 0.5px #00aced;
-  padding: 3px;
-  margin-bottom: 5px;
-}
-
-.fa-facebook {
-  color: #3B5998;
+  background-color: #00aced;
 }
 
 .facebook__share {
-  border-radius: 5px;
   border: solid 0.5px #3B5998;
-  padding: 3px;
-  margin-bottom: 5px;
-}
-
-.fa-line {
-  color: #00B900;
+  background-color: #3B5998;
 }
 
 .line__share {
-  border-radius: 5px;
   border: solid 0.5px #00B900;
-  padding: 3px;
-  margin-bottom: 5px;
-}
-
-.fa-google {
-  color: #DD5144;
-}
-
-.google__share {
-  border-radius: 5px;
-  border: solid 0.5px #DD5144;
-  padding: 3px;
-  margin-bottom: 5px;
+  background-color: #00B900;
 }
 
 .sidebar-sns-section {
@@ -4723,27 +4695,25 @@ article {
 }
 
 .sidebar-sns-h3 {
-  background: #a3c0da;
-  margin: 0px auto;
+  background: #daf59c;
   padding: 10px;
 }
 
 .sidebar-sns-links {
-  padding-left: 5px;
-  padding-top: 10px;
+  padding: 8px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .sidebar-keywords {
   margin-top: 10px;
-  border: solid #C2CBD3;
+  border: solid #c2cbd3;
   background: #fff;
 }
 
 .sidebar-keywords-h3 {
-  background: #a3c0da;
+  background: #daf59c;
   margin: 0px auto;
   padding: 10px;
 }
@@ -4765,60 +4735,55 @@ article {
   margin-left: 15px;
 }
 
-.home-quiz__introduction {
-  padding: 5px 10px;
+.sidebar__notice {
+  margin: 0px auto;
 }
 
-.home-quiz__introduction-h2 {
-  border-bottom: solid;
+@media (max-width: 992px) {
+  .sidebar__notice {
+    margin: 10px auto 0;
+  }
 }
 
-.home-quiz__introduction-h2-logo {
-  width: 10%;
+.sidebar__notice-table {
+  background: #fff;
+  padding: 8px;
 }
 
-.home-quiz__setting {
-  padding: 5px 10px;
+.sidebar__notice-h3 {
+  background: #daf59c;
+  margin: 0px auto;
+  padding: 10px;
 }
 
-.home-quiz__setting-h2 {
-  border-bottom: solid;
+.col-md-4,
+.col-xs-12 {
+  padding: 0;
 }
 
-.home-quiz__setting-h2-logo {
-  width: 10%;
+@media (min-width: 992px) {
+  .col-md-4,
+  .col-xs-12 {
+    padding: 0 15px;
+  }
 }
 
+.home-quiz__h2 {
+  border-bottom: 3px dotted;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.home-quiz__introduction,
+.home-quiz__setting,
 .home-quiz__ranking {
   padding: 5px 10px;
 }
 
-.home-quiz__ranking-h2 {
-  border-bottom: solid;
-}
-
-.home-quiz__ranking-h2-logo {
-  width: 10%;
-}
-
-.home__notice {
-  padding: 5px 10px;
-}
-
-.home__notice-h2 {
-  border-bottom: solid;
-}
-
-.home__notice-h2-logo {
-  width: 10%;
-}
-
-.quiz-question-h2 {
-  border-bottom: solid;
-}
-
-.quiz-question__logo {
-  width: 10%;
+.quiz-h2 {
+  border-bottom: dotted;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .quiz-answer__list {
@@ -4834,23 +4799,7 @@ article {
   margin: 10px 0px;
 }
 
-.quiz-correct-h2 {
-  border-bottom: solid;
-}
-
-.quiz-correct__logo {
-  width: 10%;
-}
-
 .quiz-correct-answer {
-  width: 10%;
-}
-
-.quiz-commentary-h2 {
-  border-bottom: solid;
-}
-
-.quiz-commentary__logo {
   width: 10%;
 }
 
@@ -4864,5 +4813,17 @@ article {
 
 .mypage__logo {
   width: 10%;
+}
+
+.keyword-h2 {
+  border-bottom: solid;
+}
+
+.keyword__logo {
+  width: 10%;
+}
+
+.keyword__description {
+  margin-bottom: 30px;
 }
 

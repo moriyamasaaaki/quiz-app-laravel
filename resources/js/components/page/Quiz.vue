@@ -4,8 +4,7 @@
       <div class="container">
         <article class="col-md-8 col-xs-12">
           <section>
-            <h2 class="quiz-question-h2">
-              <img class="quiz-question__logo" src="/images/what-is-mark.png" />
+            <h2 class="quiz-h2">
               第{{ quizNumber }}問
             </h2>
             <p>{{ title }}</p>
@@ -28,8 +27,8 @@
             <div class="text-right">カテゴリー: {{ categoryName }}</div>
           </section>
           <section>
-            <h2 class="quiz-correct-h2">
-              <img class="quiz-correct__logo" src="/images/correct-mark.png" />正解
+            <h2 class="quiz-h2">
+              正解
             </h2>
             <p>
               <button
@@ -47,8 +46,8 @@
             </div>
           </section>
           <section>
-            <h2 class="quiz-commentary-h2">
-              <img class="quiz-commentary__logo" src="/images/commentary-mark.png" />解説
+            <h2 class="quiz-h2">
+              解説
             </h2>
             <div
               class="quiz-commentary__text"

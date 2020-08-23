@@ -1,10 +1,8 @@
 header {
-  margin-top: -10px;
   background: $white;
 
   h1 {
-    font-size: 12px;
-    margin: 10px;
+    font-size: 16px;
   }
 
 
@@ -13,8 +11,8 @@ header {
   }
 
   .navbar {
-    background: $thin-gray;
-    border-color: $thin-gray;
+    background: rgb(51, 85, 105);
+    border-color: rgb(51, 85, 105);
   }
 
   .header {
@@ -23,32 +21,20 @@ header {
       margin-top: -15px;
     }
     &-nav__drop-down {
-      background: $thin-gray;
+      background: rgb(51, 85, 105);
     }
   }
 
   #header {
     &-nav {
-      &__home {
-        color: $white;
-      }
-
-      &__login {
-        color: $white;
-      }
-
-      &__register {
-        color: $white;
-      }
-       &__name {
-        color: $white;
-      }
-
+      &__home,
+      &__login,
+      &__register,
+      &__name,
       &__mypage {
         color: $white;
-        margin: auto;
       }
-
+      &__mypage,
       &__logout {
         color: $white;
         margin: auto;

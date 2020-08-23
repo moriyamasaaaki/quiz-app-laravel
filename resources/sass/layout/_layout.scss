@@ -1,11 +1,3 @@
-// @font-face {
-//   font-family: "NasuM-Regular";
-//   src: url(../../fonts/NasuM-Regular.ttf);
-// }
-
-// body {
-//   font-family: NasuM-Regular, sans-serif;
-// }
 
 html {
   position: relative;
@@ -25,7 +17,6 @@ main {
 }
 
 article {
-  border: solid $gray;
   background: $white;
   width: 60%;
 }
