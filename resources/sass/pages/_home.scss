@@ -1,44 +1,15 @@
 .home {
   &-quiz {
-    &__introduction {
-      padding: 5px 10px;
-
-      &-h2 {
+    &__h2 {
         border-bottom: 3px dotted;
         padding-bottom: 8px;
         margin-bottom: 16px;
-
-        &-logo {
-          width: 10%;
-        }
       }
-    }
-    &__setting {
+    &__introduction,
+    &__setting,
+    &__ranking
+     {
       padding: 5px 10px;
-
-      &-h2 {
-        border-bottom: 3px dotted;
-        padding-bottom: 8px;
-        margin-bottom: 16px;
-
-        &-logo {
-          width: 10%;
-        }
-      }
-    }
-
-    &__ranking {
-      padding: 5px 10px;
-
-      &-h2 {
-        border-bottom: 3px dotted;
-        padding-bottom: 8px;
-        margin-bottom: 16px;
-
-        &-logo {
-          width: 10%;
-        }
-      }
     }
   }
 }

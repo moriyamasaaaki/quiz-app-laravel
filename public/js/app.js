@@ -2839,7 +2839,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2888,7 +2887,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layout_TheSidebar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../layout/TheSidebar */ "./resources/js/components/layout/TheSidebar.vue");
 /* harmony import */ var _module_TheModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../module/TheModal */ "./resources/js/components/module/TheModal.vue");
-//
 //
 //
 //
@@ -59085,7 +59083,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("footer", [
       _c("div", { staticClass: "container text-center" }, [
-        _c("small", [_vm._v("© 2019 4Answers-quiz. All rights reserved.")])
+        _c("small", [_vm._v("© 2020 Masaaki Moriya. All rights reserved.")])
       ])
     ])
   }
@@ -59733,7 +59731,7 @@ var render = function() {
                   [
                     _c("network", { attrs: { network: "line" } }, [
                       _c("i", { staticClass: "fab fa-line" }),
-                      _vm._v(" Line\n          ")
+                      _vm._v(" LINE\n          ")
                     ])
                   ],
                   1
@@ -59894,7 +59892,9 @@ var render = function() {
               _vm._m(0),
               _vm._v(" "),
               _c("section", { staticClass: "home-quiz__setting" }, [
-                _vm._m(1),
+                _c("h2", { staticClass: "home-quiz__h2" }, [
+                  _vm._v("\n            カテゴリー\n          ")
+                ]),
                 _vm._v(" "),
                 _c(
                   "form",
@@ -59990,7 +59990,9 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("section", { staticClass: "home-quiz__ranking" }, [
-                _vm._m(2),
+                _c("h2", { staticClass: "home-quiz__h2" }, [
+                  _vm._v("\n            ランキング\n          ")
+                ]),
                 _vm._v(" "),
                 _c("div", [
                   _c("label", [
@@ -60138,41 +60140,13 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("section", { staticClass: "home-quiz__introduction" }, [
-      _c("h2", { staticClass: "home-quiz__introduction-h2" }, [
-        _c("img", {
-          staticClass: "home-quiz__introduction-h2-logo",
-          attrs: { src: "" }
-        }),
-        _vm._v("基礎知識クイズ\n          ")
+      _c("h2", { staticClass: "home-quiz__h2" }, [
+        _vm._v("\n            基礎知識クイズ\n          ")
       ]),
       _vm._v(" "),
       _c("p", [_vm._v("ジャンルを選んで正答率100%を目指そう")]),
       _vm._v(" "),
       _c("p", [_vm._v(" ランキング１位を目指そう！！")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "home-quiz__setting-h2" }, [
-      _c("img", {
-        staticClass: "home-quiz__setting-h2-logo",
-        attrs: { src: "" }
-      }),
-      _vm._v("カテゴリー\n          ")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "home-quiz__ranking-h2" }, [
-      _c("img", {
-        staticClass: "home-quiz__ranking-h2-logo",
-        attrs: { src: "" }
-      }),
-      _vm._v("ランキング\n          ")
     ])
   }
 ]
@@ -60622,7 +60596,9 @@ var render = function() {
               "section",
               { staticClass: "article-section" },
               [
-                _vm._m(0),
+                _c("h2", { staticClass: "mypage-h2" }, [
+                  _vm._v("\n            マイページ\n          ")
+                ]),
                 _vm._v(" "),
                 _vm.changeCorrectRatioData.length !== 0
                   ? _c("h3", [
@@ -60653,20 +60629,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "mypage-h2" }, [
-      _c("img", {
-        staticClass: "mypage__logo",
-        attrs: { src: "/images/mypage-icon.png" }
-      }),
-      _vm._v("マイページ\n          ")
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -60698,11 +60661,7 @@ var render = function() {
           [
             _c("article", { staticClass: "col-md-8 col-xs-12" }, [
               _c("section", [
-                _c("h2", { staticClass: "quiz-question-h2" }, [
-                  _c("img", {
-                    staticClass: "quiz-question__logo",
-                    attrs: { src: "/images/what-is-mark.png" }
-                  }),
+                _c("h2", { staticClass: "quiz-h2" }, [
                   _vm._v(
                     "\n            第" +
                       _vm._s(_vm.quizNumber) +
@@ -60760,7 +60719,9 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("section", [
-                _vm._m(0),
+                _c("h2", { staticClass: "quiz-h2" }, [
+                  _vm._v("\n            正解\n          ")
+                ]),
                 _vm._v(" "),
                 _c("p", [
                   _c(
@@ -60835,7 +60796,9 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("section", [
-                _vm._m(1),
+                _c("h2", { staticClass: "quiz-h2" }, [
+                  _vm._v("\n            解説\n          ")
+                ]),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -60907,32 +60870,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "quiz-correct-h2" }, [
-      _c("img", {
-        staticClass: "quiz-correct__logo",
-        attrs: { src: "/images/correct-mark.png" }
-      }),
-      _vm._v("正解\n          ")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "quiz-commentary-h2" }, [
-      _c("img", {
-        staticClass: "quiz-commentary__logo",
-        attrs: { src: "/images/commentary-mark.png" }
-      }),
-      _vm._v("解説\n          ")
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

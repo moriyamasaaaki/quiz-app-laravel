@@ -441,7 +441,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -39092,7 +39091,7 @@ var render = function() {
                   [
                     _c("network", { attrs: { network: "line" } }, [
                       _c("i", { staticClass: "fab fa-line" }),
-                      _vm._v(" Line\n          ")
+                      _vm._v(" LINE\n          ")
                     ])
                   ],
                   1
@@ -39251,11 +39250,7 @@ var render = function() {
           [
             _c("article", { staticClass: "col-md-8 col-xs-12" }, [
               _c("section", [
-                _c("h2", { staticClass: "quiz-question-h2" }, [
-                  _c("img", {
-                    staticClass: "quiz-question__logo",
-                    attrs: { src: "/images/what-is-mark.png" }
-                  }),
+                _c("h2", { staticClass: "quiz-h2" }, [
                   _vm._v(
                     "\n            第" +
                       _vm._s(_vm.quizNumber) +
@@ -39313,7 +39308,9 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("section", [
-                _vm._m(0),
+                _c("h2", { staticClass: "quiz-h2" }, [
+                  _vm._v("\n            正解\n          ")
+                ]),
                 _vm._v(" "),
                 _c("p", [
                   _c(
@@ -39388,7 +39385,9 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("section", [
-                _vm._m(1),
+                _c("h2", { staticClass: "quiz-h2" }, [
+                  _vm._v("\n            解説\n          ")
+                ]),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -39460,32 +39459,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "quiz-correct-h2" }, [
-      _c("img", {
-        staticClass: "quiz-correct__logo",
-        attrs: { src: "/images/correct-mark.png" }
-      }),
-      _vm._v("正解\n          ")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "quiz-commentary-h2" }, [
-      _c("img", {
-        staticClass: "quiz-commentary__logo",
-        attrs: { src: "/images/commentary-mark.png" }
-      }),
-      _vm._v("解説\n          ")
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

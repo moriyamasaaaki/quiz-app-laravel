@@ -121,7 +121,7 @@
         <social-sharing title="shareボタン" inline-template>
           <div class="line__share">
             <network network="line">
-              <i class="fab fa-line"></i> Line
+              <i class="fab fa-line"></i> LINE
             </network>
           </div>
         </social-sharing>

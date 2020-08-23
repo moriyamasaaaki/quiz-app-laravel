@@ -39026,7 +39026,7 @@ var render = function() {
                   [
                     _c("network", { attrs: { network: "line" } }, [
                       _c("i", { staticClass: "fab fa-line" }),
-                      _vm._v(" Line\n          ")
+                      _vm._v(" LINE\n          ")
                     ])
                   ],
                   1
@@ -39075,7 +39075,9 @@ var render = function() {
               _vm._m(0),
               _vm._v(" "),
               _c("section", { staticClass: "home-quiz__setting" }, [
-                _vm._m(1),
+                _c("h2", { staticClass: "home-quiz__h2" }, [
+                  _vm._v("\n            カテゴリー\n          ")
+                ]),
                 _vm._v(" "),
                 _c(
                   "form",
@@ -39171,7 +39173,9 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("section", { staticClass: "home-quiz__ranking" }, [
-                _vm._m(2),
+                _c("h2", { staticClass: "home-quiz__h2" }, [
+                  _vm._v("\n            ランキング\n          ")
+                ]),
                 _vm._v(" "),
                 _c("div", [
                   _c("label", [
@@ -39319,41 +39323,13 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("section", { staticClass: "home-quiz__introduction" }, [
-      _c("h2", { staticClass: "home-quiz__introduction-h2" }, [
-        _c("img", {
-          staticClass: "home-quiz__introduction-h2-logo",
-          attrs: { src: "" }
-        }),
-        _vm._v("基礎知識クイズ\n          ")
+      _c("h2", { staticClass: "home-quiz__h2" }, [
+        _vm._v("\n            基礎知識クイズ\n          ")
       ]),
       _vm._v(" "),
       _c("p", [_vm._v("ジャンルを選んで正答率100%を目指そう")]),
       _vm._v(" "),
       _c("p", [_vm._v(" ランキング１位を目指そう！！")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "home-quiz__setting-h2" }, [
-      _c("img", {
-        staticClass: "home-quiz__setting-h2-logo",
-        attrs: { src: "" }
-      }),
-      _vm._v("カテゴリー\n          ")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "home-quiz__ranking-h2" }, [
-      _c("img", {
-        staticClass: "home-quiz__ranking-h2-logo",
-        attrs: { src: "" }
-      }),
-      _vm._v("ランキング\n          ")
     ])
   }
 ]

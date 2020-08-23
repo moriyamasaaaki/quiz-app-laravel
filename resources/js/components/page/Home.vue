@@ -4,15 +4,15 @@
       <div class="container">
         <article class="col-md-8 col-xs-12">
           <section class="home-quiz__introduction">
-            <h2 class="home-quiz__introduction-h2">
-              <img class="home-quiz__introduction-h2-logo" src />基礎知識クイズ
+            <h2 class="home-quiz__h2">
+              基礎知識クイズ
             </h2>
             <p>ジャンルを選んで正答率100%を目指そう</p>
             <p> ランキング１位を目指そう！！</p>
           </section>
           <section class="home-quiz__setting">
-            <h2 class="home-quiz__setting-h2">
-              <img class="home-quiz__setting-h2-logo" src />カテゴリー
+            <h2 class="home-quiz__h2">
+              カテゴリー
             </h2>
             <form>
               <label v-for="(cate, index) in category" :key="index">
@@ -28,8 +28,8 @@
             </form>
           </section>
           <section class="home-quiz__ranking">
-            <h2 class="home-quiz__ranking-h2">
-              <img class="home-quiz__ranking-h2-logo" src />ランキング
+            <h2 class="home-quiz__h2">
+              ランキング
             </h2>
             <div>
               <label>

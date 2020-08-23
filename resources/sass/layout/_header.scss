@@ -27,26 +27,14 @@ header {
 
   #header {
     &-nav {
-      &__home {
-        color: $white;
-      }
-
-      &__login {
-        color: $white;
-      }
-
-      &__register {
-        color: $white;
-      }
-       &__name {
-        color: $white;
-      }
-
+      &__home,
+      &__login,
+      &__register,
+      &__name,
       &__mypage {
         color: $white;
-        margin: auto;
       }
-
+      &__mypage,
       &__logout {
         color: $white;
         margin: auto;

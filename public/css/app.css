@@ -4604,27 +4604,15 @@ header .header-nav__drop-down {
   background: #335569;
 }
 
-header #header-nav__home {
-  color: #fff;
-}
-
-header #header-nav__login {
-  color: #fff;
-}
-
-header #header-nav__register {
-  color: #fff;
-}
-
-header #header-nav__name {
-  color: #fff;
-}
-
+header #header-nav__home,
+header #header-nav__login,
+header #header-nav__register,
+header #header-nav__name,
 header #header-nav__mypage {
   color: #fff;
-  margin: auto;
 }
 
+header #header-nav__mypage,
 header #header-nav__logout {
   color: #fff;
   margin: auto;
@@ -4671,37 +4659,35 @@ article {
   }
 }
 
+.fa-facebook,
+.fa-line,
 .fa-twitter {
-  color: #00aced;
+  color: white;
+}
+
+.twitter__share,
+.facebook__share,
+.line__share {
+  border-radius: 5px;
+  color: white;
+  padding: 4px 8px;
+  margin: 8px;
+  cursor: pointer;
 }
 
 .twitter__share {
-  border-radius: 5px;
   border: solid 0.5px #00aced;
-  padding: 3px;
-  margin: 8px;
-}
-
-.fa-facebook {
-  color: #3B5998;
+  background-color: #00aced;
 }
 
 .facebook__share {
-  border-radius: 5px;
   border: solid 0.5px #3B5998;
-  padding: 3px;
-  margin: 8px;
-}
-
-.fa-line {
-  color: #00B900;
+  background-color: #3B5998;
 }
 
 .line__share {
-  border-radius: 5px;
   border: solid 0.5px #00B900;
-  padding: 3px;
-  margin: 8px;
+  background-color: #00B900;
 }
 
 .sidebar-sns-section {
@@ -4782,54 +4768,22 @@ article {
   }
 }
 
-.home-quiz__introduction {
-  padding: 5px 10px;
-}
-
-.home-quiz__introduction-h2 {
+.home-quiz__h2 {
   border-bottom: 3px dotted;
   padding-bottom: 8px;
   margin-bottom: 16px;
 }
 
-.home-quiz__introduction-h2-logo {
-  width: 10%;
-}
-
-.home-quiz__setting {
-  padding: 5px 10px;
-}
-
-.home-quiz__setting-h2 {
-  border-bottom: 3px dotted;
-  padding-bottom: 8px;
-  margin-bottom: 16px;
-}
-
-.home-quiz__setting-h2-logo {
-  width: 10%;
-}
-
+.home-quiz__introduction,
+.home-quiz__setting,
 .home-quiz__ranking {
   padding: 5px 10px;
 }
 
-.home-quiz__ranking-h2 {
-  border-bottom: 3px dotted;
+.quiz-h2 {
+  border-bottom: dotted;
   padding-bottom: 8px;
   margin-bottom: 16px;
-}
-
-.home-quiz__ranking-h2-logo {
-  width: 10%;
-}
-
-.quiz-question-h2 {
-  border-bottom: solid;
-}
-
-.quiz-question__logo {
-  width: 10%;
 }
 
 .quiz-answer__list {
@@ -4845,23 +4799,7 @@ article {
   margin: 10px 0px;
 }
 
-.quiz-correct-h2 {
-  border-bottom: solid;
-}
-
-.quiz-correct__logo {
-  width: 10%;
-}
-
 .quiz-correct-answer {
-  width: 10%;
-}
-
-.quiz-commentary-h2 {
-  border-bottom: solid;
-}
-
-.quiz-commentary__logo {
   width: 10%;
 }
 
