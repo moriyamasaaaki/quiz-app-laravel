@@ -5,7 +5,6 @@
         <article class="col-md-8 col-xs-12">
           <section>
             <h2 class="keyword-h2">
-              <img class="keyword__logo" src="/images/search-mark.png" />
               【{{ initial }}】からはじまるキーワード（{{ keyword.length }}語)
             </h2>
             <dl v-for="(key, index) in keyword" :key="index">
